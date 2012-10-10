@@ -43,7 +43,7 @@ while(!correctOption){
 			int b2dresult = binary2decimal(binary);
 			correctOption = true;
 			if(b2dresult == -1){
-				println ("El numero introducido no es binario");
+				println ("The number introduced is not binary");
 			}else {
 				println (binary + " in decimal system is " + b2dresult);
 			}
