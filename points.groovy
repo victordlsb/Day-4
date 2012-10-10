@@ -3,27 +3,35 @@ class Point{
 	int y;
 
 	double distanceTo(Point point){
-
+		return (Math.sqrt(Math.pow(this.x-point.x,2)+Math.pow(this.y-point.y,2)));	
 	}
 
 	double distanceToOrigin(){
-
+		return (Math.sqrt(Math.pow(this.x,2)+Math.pow(this.y,2)));
 	}
 
 	void moveTo(double x, double y){
-
+		this.x = x;
+		this.y = y;
 	}
 
-	void moveTo(Point){
-
+	void moveTo(Point point){
+		this.x = point.x;
+		this.y = point.y;
 	}
 
 	Point clone(){
-
+		Point point = new Point();
+		point.x=this.x;
+		point.y=this.y;
+		return point;
 	}
 
 	Point opposite(){
-
+		Point point = new Point();
+		point.x=-1*this.x;
+		point.y=-1*this.y;
+		return point;
 	}
 }
 
@@ -86,18 +94,17 @@ while (keepRunning){
 		
 		case 5:			
 			auxPoint = point.clone();
-			println("The point has been succesfully cloned");
+			println("The point has been succesfully cloned at x=" + auxPoint.x + " and y=" + auxPoint.y);
 			break;
 		
 		case 6:
 			auxPoint = point.opposite();
-			println ("The point at the opposite coordinates has been succesfully created");
+			println ("The point at the opposite coordinates has been succesfully created at x=" + auxPoint.x + " and y=" + auxPoint.y);
 			break;
 			
 		case 0:
 			keepRunning = false;
-			println ("Good bye! :)");
-			
+			println ("Good bye! :)");			
 			break;
 		
 		default:
